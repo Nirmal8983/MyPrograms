@@ -1,0 +1,57 @@
+
+#include <iostream>
+
+#include <iostream>
+using namespace std;
+
+
+struct Point
+{
+    int x, y;
+};
+
+int CalculatetheLength(Point a, Point b, Point c)
+{
+    int w;
+    int length1 = (b.y - a.y) - (b.x - a.x);
+    
+    int length2 = (c.y - a.y) - (c.x - a.x);
+    
+    if (length1 < 0)
+    {
+        w = -1;
+    }
+    else
+        w = 1;
+    if (length2 < 0)
+    {
+        w = -1;
+    }
+    else
+        w = 1;
+    int SurfaceArea = (length1 * w + length2 * w);
+    return SurfaceArea;
+}
+
+void CalculatetheSurfaceArea(Point buil[], Point p)
+{
+     int n = 4;
+     int i = 0;
+        
+     int SurfaceArea = (CalculatetheLength(buil[i], buil[i + 1], buil[i + 3]));
+     
+     cout << "surface area is: " << SurfaceArea;
+        
+    
+}
+
+
+int main()
+{
+    Point buildings[] = { {4, 0}, {4, -5}, {7, -5}, {7, 0} };
+  
+    Point p={ 1, 1 };
+
+    (CalculatetheSurfaceArea(buildings, p));
+ 
+}
